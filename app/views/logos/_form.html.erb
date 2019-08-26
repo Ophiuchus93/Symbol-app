@@ -1,0 +1,14 @@
+<h1><%= @logo.id ? "Edit Symbol" : "Add a Symbol to Your Library" %></h1>
+<%= form_with(model: @logo, local: true) do |f| %>
+
+<div class="field">
+  <%= f.label :name %>
+  <%= f.text_field :name, required: true, placeholder: "Symbol Name" %>
+</div>
+
+<div class="field">
+  <%= f.label :tradition %>
+  <%= f.text_field :tradition, required: true, placeholder: "Tradition Name" %>
+</div>
+  <%= f.submit %>
+<% end %>

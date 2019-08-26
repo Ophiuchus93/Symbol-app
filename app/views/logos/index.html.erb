@@ -1,0 +1,19 @@
+<h2>Welcome <%= current_user.first_name %> </h2>
+
+<%= link_to "Add a Symbol to Your Library", new_logo_path %>
+<h3>Your Symbol Library</h2>
+<ul>
+  <% @logos.each do |logo|%>
+  <li>Symbol Name: 
+    <%= logo.name %> 
+  <br />
+    Esoteric Tradition: 
+    <%= logo.tradition %>
+  <br />
+    <%= link_to "Edit your symbol", edit_logo_path(logo) %>
+    <%= link_to "Delete Symbol", logo, method: :delete %>
+  <hr />
+  </li>
+<% end %>
+</ul>
+<%= button_to "Log Out", destroy_user_session_path, method: :delete %>
